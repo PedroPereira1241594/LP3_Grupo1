@@ -31,7 +31,7 @@ application {
 }
 
 javafx {
-    version = "17.0.6"
+    version = "21"
     modules = listOf("javafx.controls", "javafx.fxml", "javafx.web", "javafx.swing", "javafx.media")
 }
 
@@ -57,6 +57,11 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+// 🔹 Adicionado: Forçar software rendering para JavaFX
+tasks.named<JavaExec>("run") {
+    jvmArgs = listOf("-Dprism.order=sw")
 }
 
 jlink {
