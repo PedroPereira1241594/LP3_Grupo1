@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="12.0" xmlns:fx="http://javafx.com/fxml">
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+    </padding>
+
+    <TableView fx:id="tabelaPessoas" prefHeight="400.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="colNome" text="Nome" prefWidth="180.0" />
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="220.0" />
+            <TableColumn fx:id="colDataNascimento" text="Data Nascimento" prefWidth="200.0" />
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="100.0" />
+        </columns>
+    </TableView>
+</VBox>
