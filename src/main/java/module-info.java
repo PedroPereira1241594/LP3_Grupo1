@@ -10,7 +10,10 @@ module com.example.lp3_grupo1 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens com.example.lp3_grupo1 to javafx.fxml;
+    opens com.example.lp3_grupo1.Controller to javafx.fxml;
+    opens com.example.lp3_grupo1.Model to javafx.base;
     exports com.example.lp3_grupo1;
 }
