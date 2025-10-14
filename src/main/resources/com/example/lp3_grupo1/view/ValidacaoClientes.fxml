@@ -5,17 +5,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="12.0" xmlns:fx="http://javafx.com/fxml">
+<VBox alignment="CENTER" spacing="12.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.lp3_grupo1.Controller.ValidacaoClientesController">
     <padding>
         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
     </padding>
 
-    <TableView fx:id="tabelaPessoas" prefHeight="400.0" prefWidth="700.0">
+    <TableView fx:id="tabelaPessoas" prefHeight="400.0" prefWidth="550.0">
         <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="80.0" />
             <TableColumn fx:id="colNome" text="Nome" prefWidth="180.0" />
+            <TableColumn fx:id="colPassword" text="Password" prefWidth="160.0" />
             <TableColumn fx:id="colEmail" text="Email" prefWidth="220.0" />
             <TableColumn fx:id="colDataNascimento" text="Data Nascimento" prefWidth="200.0" />
             <TableColumn fx:id="colEstado" text="Estado" prefWidth="100.0" />
+            <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100.0" />
         </columns>
     </TableView>
 </VBox>
