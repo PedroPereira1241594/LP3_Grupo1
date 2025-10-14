@@ -27,7 +27,7 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule.set("com.example.lp3_grupo1")
-    mainClass.set("com.example.lp3_grupo1.HelloApplication")
+    mainClass.set("com.example.lp3_grupo1.Main")
 }
 
 javafx {
@@ -36,6 +36,9 @@ javafx {
 }
 
 dependencies {
+    // Driver JDBC para SQL Server
+    implementation("com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11")
+    
     implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
         exclude(group = "org.openjfx")
