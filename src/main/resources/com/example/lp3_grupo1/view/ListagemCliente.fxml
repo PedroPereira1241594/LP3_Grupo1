@@ -7,9 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lp3_grupo1.Controller.ValidacaoClientesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lp3_grupo1.Controller.ListagemClienteController">
     <children>
         <!-- HEADER -->
         <AnchorPane prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: #003366;">
@@ -32,7 +30,7 @@
             <children>
                 <VBox layoutY="-7.0" prefHeight="569.0" prefWidth="317.0">
                     <children>
-                        <AnchorPane prefHeight="75.0" prefWidth="307.0" style="-fx-border-color: #003366; -fx-background-color: #005B96;">
+                        <AnchorPane prefHeight="75.0" prefWidth="307.0" style="-fx-border-color: #003366; -fx-background-color: #0074D9;">
                             <children>
                                 <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0" text="❯" textFill="#FFFFFF">
                                     <font>
@@ -50,7 +48,7 @@
 
                         <AnchorPane prefHeight="84.0" prefWidth="318.0" />
 
-                        <AnchorPane prefHeight="75.0" prefWidth="316.0" style="-fx-border-color: #003366; -fx-background-color: #0074D9;">
+                        <AnchorPane prefHeight="75.0" prefWidth="316.0" style="-fx-border-color: #003366;">
                             <children>
                                 <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0" text="❯" textFill="#FFFFFF">
                                     <font>
@@ -117,20 +115,20 @@
 
         <!-- CONTEÚDO CENTRAL -->
         <VBox layoutX="387.0" layoutY="148.0" prefHeight="430.0" prefWidth="820.0">
-
-                <TableView fx:id="tabelaPessoas" prefHeight="400.0" prefWidth="550.0">
-                    <columns>
-                        <TableColumn fx:id="colId" text="ID" prefWidth="80.0" />
-                        <TableColumn fx:id="colNome" text="Nome" prefWidth="180.0" />
-                        <TableColumn fx:id="colPassword" text="Password" prefWidth="160.0" />
-                        <TableColumn fx:id="colEmail" text="Email" prefWidth="220.0" />
-                        <TableColumn fx:id="colDataNascimento" text="Data Nascimento" prefWidth="200.0" />
-                        <TableColumn fx:id="colEstado" text="Estado" prefWidth="100.0" />
-                        <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100.0" />
-                        <TableColumn fx:id="colAceitar" text="" prefWidth="120.0" />
-                    </columns>
-                </TableView>
-
+            <children>
+                <Label text="MAPA  ATUAL" textFill="#003366">
+                    <font>
+                        <Font name="Eras Bold ITC" size="64.0" />
+                    </font>
+                </Label>
+                <AnchorPane prefHeight="54.0" prefWidth="790.0" />
+                <Label alignment="TOP_LEFT" prefHeight="103.0" prefWidth="790.0" text="&quot;Aqui é suposto aparecer o mapa que esta a ser utilizador para os utilizadores&quot;." textFill="#003366" wrapText="true">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <AnchorPane prefHeight="28.0" prefWidth="790.0" />
+            </children>
         </VBox>
     </children>
 </AnchorPane>

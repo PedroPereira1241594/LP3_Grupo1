@@ -3,6 +3,7 @@ package com.example.lp3_grupo1.Controller;
 import java.util.List;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -12,6 +13,16 @@ import com.example.lp3_grupo1.Model.Utilizador;
 import com.example.lp3_grupo1.BLL.ValidacaoClientesBLL;
 
 public class ValidacaoClientesController {
+    @FXML
+    private void closeApplicationButtonOnAction(ActionEvent event) {
+        // ação do botão Home
+    }
+
+    @FXML
+    private void loginButtonOnAction(ActionEvent event){
+        //ação do botão Home
+    }
+
     @FXML
     private TableView<Utilizador> tabelaPessoas;
 
