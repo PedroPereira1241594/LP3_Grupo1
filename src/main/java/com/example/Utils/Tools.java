@@ -1,15 +1,20 @@
 package com.example.Utils;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+
+import com.example.lp3_grupo1.Main;
 
 public class Tools {
     public enum tipoUtilizador {
@@ -101,5 +106,16 @@ public class Tools {
             mostrarAlerta(Alert.AlertType.ERROR, "Erro ao carregar vista", "Não foi possível carregar o ecrã:\n" + caminhoFxml);
             e.printStackTrace();
         }
+    }
+
+    public static void actionTeste(javafx.event.ActionEvent event, String caminhoFxml, String titulo, int largura, int altura) throws IOException {
+        // Obter o Stage a partir do botão que disparou o evento
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(caminhoFxml));
+        Scene scene = new Scene(fxmlLoader.load(), largura, altura);
+        stage.setTitle(titulo);
+        stage.setScene(scene);
+        stage.show();
     }
 }
