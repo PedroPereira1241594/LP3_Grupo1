@@ -16,6 +16,7 @@ import javafx.scene.control.ButtonType;
 
 import com.example.lp3_grupo1.Model.Utilizador;
 import com.example.lp3_grupo1.BLL.ValidacaoClientesBLL;
+import com.example.Utils.Tools;
 
 /**
  * Controlador da vista de validação de clientes.
@@ -30,13 +31,7 @@ public class ValidacaoClientesController {
     private Button btnAceitarTodos;
 
     @FXML
-    private TableColumn<Utilizador, Integer> colId;
-
-    @FXML
     private TableColumn<Utilizador, String> colNome;
-
-    @FXML
-    private TableColumn<Utilizador, String> colPassword;
 
     @FXML
     private TableColumn<Utilizador, String> colEmail;
@@ -45,10 +40,10 @@ public class ValidacaoClientesController {
     private TableColumn<Utilizador, java.time.LocalDate> colDataNascimento;
 
     @FXML
-    private TableColumn<Utilizador, Integer> colEstado;
+    private TableColumn<Utilizador, String> colEstado;
 
     @FXML
-    private TableColumn<Utilizador, Integer> colTipo;
+    private TableColumn<Utilizador, String> colTipo;
 
     @FXML
     private TableColumn<Utilizador, Void> colAceitar;
@@ -60,13 +55,29 @@ public class ValidacaoClientesController {
     @FXML
     private void initialize() {
         // Mapear colunas para propriedades do modelo Utilizador
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colDataNascimento.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
-        colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        colEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
+        
+        // Configurar coluna de tipo para mostrar o nome do enum
+        colTipo.setCellValueFactory(cellData -> {
+            Integer tipoValue = cellData.getValue().getTipo();
+            if (tipoValue != null) {
+                Tools.tipoUtilizador tipo = Tools.tipoUtilizador.fromCodigo(tipoValue);
+                return new javafx.beans.property.SimpleStringProperty(tipo.name());
+            }
+            return new javafx.beans.property.SimpleStringProperty("");
+        });
+        
+        // Configurar coluna de estado para mostrar o nome do enum
+        colEstado.setCellValueFactory(cellData -> {
+            Integer estadoValue = cellData.getValue().getEstado();
+            if (estadoValue != null) {
+                Tools.estadoUtilizador estado = Tools.estadoUtilizador.fromCodigo(estadoValue);
+                return new javafx.beans.property.SimpleStringProperty(estado.name());
+            }
+            return new javafx.beans.property.SimpleStringProperty("");
+        });
 
         configurarColunaAceitar();
 

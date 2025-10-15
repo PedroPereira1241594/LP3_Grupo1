@@ -20,9 +20,7 @@
     </children>
     <TableView fx:id="tabelaPessoas" prefHeight="400.0" prefWidth="550.0">
         <columns>
-            <TableColumn fx:id="colId" text="ID" prefWidth="80.0" />
             <TableColumn fx:id="colNome" text="Nome" prefWidth="180.0" />
-            <TableColumn fx:id="colPassword" text="Password" prefWidth="160.0" />
             <TableColumn fx:id="colEmail" text="Email" prefWidth="220.0" />
             <TableColumn fx:id="colDataNascimento" text="Data Nascimento" prefWidth="200.0" />
             <TableColumn fx:id="colEstado" text="Estado" prefWidth="100.0" />
