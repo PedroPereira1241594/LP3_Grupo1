@@ -1,5 +1,7 @@
 package com.example.lp3_grupo1.Controller;
 
+import com.example.lp3_grupo1.BLL.ListarClientesBLL;
+import com.example.lp3_grupo1.Model.Utilizador;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import com.example.Utils.Tools;
@@ -9,7 +11,7 @@ import java.io.IOException;
 
 /**
  * Controller para a view MenuGestor.fxml
- * 
+ *
  * @author Grupo 1
  */
 public class MenuGestorController {
@@ -23,14 +25,6 @@ public class MenuGestorController {
     @FXML
     private void onListarClientes() {
         Tools.carregarConteudo(contentBox, "/com/example/lp3_grupo1/view/ListagemCliente.fxml");
-    }
-
-    /**
-     * Carrega a view de gestão de clientes
-     */
-    @FXML
-    private void onGestaoClientes() {
-        Tools.carregarConteudo(contentBox, "/com/example/lp3_grupo1/view/GestaoCliente.fxml");
     }
 
     /**
@@ -51,11 +45,11 @@ public class MenuGestorController {
 
     /**
      * Trata o evento de clique no botão de login
-     * 
+     *
      * @param event evento de clique
      */
     @FXML
-    private void loginButtonOnAction(ActionEvent event) {
+    private void logoutButtonOnAction(ActionEvent event) {
         try {
             Tools.actionTeste(event, "/com/example/lp3_grupo1/view/Main.fxml", "Subway2Feira", 1280, 650);
         } catch (IOException e) {
@@ -63,4 +57,11 @@ public class MenuGestorController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void onGuardarAlteracoes() {
+
+    }
+
+
 }

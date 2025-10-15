@@ -12,19 +12,27 @@ import java.util.List;
  */
 public class ListarClientesBLL {
 
+    private final UtilizadorDAL utilizadorDAL;
+
+    public ListarClientesBLL() {
+        this.utilizadorDAL = new UtilizadorDAL();
+    }
+
     /**
      * Obtém a lista de todos os utilizadores registados no sistema.
-     * <p>
-     * Este método invoca a camada de acesso a dados {@link UtilizadorDAL}
-     * para recuperar todos os registos existentes na base de dados.
-     * Pode ser utilizada pela camada de controlo para apresentar os dados
-     * numa tabela ou lista na interface gráfica.
-     * </p>
-     *
-     * @return uma {@link List} de objetos {@link Utilizador} que representam os clientes registados
      */
     public List<Utilizador> listar() {
-        UtilizadorDAL utilizadorDAL = new UtilizadorDAL();
         return utilizadorDAL.getAll();
+    }
+
+    /**
+     * Atualiza o estado de um utilizador na base de dados.
+     *
+     * @param idUtilizador  ID do utilizador a atualizar
+     * @param codigoEstado  Código numérico correspondente ao novo estado
+     * @return true se a atualização foi bem-sucedida, false caso contrário
+     */
+    public boolean atualizarEstado(int idUtilizador, int codigoEstado) {
+        return utilizadorDAL.atualizarEstado(idUtilizador, codigoEstado);
     }
 }

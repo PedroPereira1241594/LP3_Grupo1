@@ -7,25 +7,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="650.0" prefWidth="1280.0"
-            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.lp3_grupo1.Controller.MenuGestorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lp3_grupo1.Controller.MenuGestorController">
 
     <children>
         <!-- HEADER -->
         <AnchorPane prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: #003366;">
             <children>
-                <Button fx:id="loginButton" layoutX="1076.0" layoutY="4.0" mnemonicParsing="false"
-                        onAction="#loginButtonOnAction" prefHeight="81.0" prefWidth="203.0"
-                        style="-fx-background-color: transparent;" text="Sair" textFill="#FFFFFF">
+                <Button fx:id="loginButton" layoutX="1076.0" layoutY="4.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="81.0" prefWidth="203.0" style="-fx-background-color: transparent;" text="Sair" textFill="#FFFFFF">
                     <font>
-                        <Font name="System Bold" size="31.0"/>
+                        <Font name="System Bold" size="31.0" />
                     </font>
                 </Button>
                 <Label layoutX="45.0" layoutY="23.0" text="Logo" textFill="#FFFFFF">
                     <font>
-                        <Font size="26.0"/>
+                        <Font size="26.0" />
                     </font>
                 </Label>
             </children>
@@ -36,94 +31,56 @@
             <children>
                 <VBox layoutY="-7.0" prefHeight="569.0" prefWidth="317.0">
                     <children>
-                        <AnchorPane prefHeight="75.0" prefWidth="307.0"
-                                    style="-fx-border-color: #003366; -fx-background-color: #0074D9;">
+                        <AnchorPane prefHeight="75.0" prefWidth="307.0" style="-fx-border-color: #003366; -fx-background-color: #0074D9;">
                             <children>
-                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0"
-                                       text="❯" textFill="#FFFFFF">
-                                    <font><Font size="20.0"/></font>
+                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0" text="❯" textFill="#FFFFFF">
+                                    <font><Font size="20.0" /></font>
                                 </Label>
-                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="28.0" layoutY="21.0"
-                                           pickOnBounds="true" preserveRatio="true"/>
-                                <Button fx:id="home1" alignment="CENTER" layoutX="1.0" mnemonicParsing="false"
-                                        prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;"
-                                        text="Inicio" textFill="#FFFFFF">
-                                    <font><Font size="19.0"/></font>
+                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="28.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+                                <Button fx:id="home1" alignment="CENTER" layoutX="1.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;" text="Inicio" textFill="#FFFFFF">
+                                    <font><Font size="19.0" /></font>
                                 </Button>
                             </children>
                         </AnchorPane>
 
-                        <AnchorPane prefHeight="84.0" prefWidth="318.0"/>
+                        <AnchorPane prefHeight="84.0" prefWidth="318.0" />
 
                         <!-- Listar Clientes -->
                         <AnchorPane prefHeight="75.0" prefWidth="316.0" style="-fx-border-color: #003366;">
                             <children>
-                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0"
-                                       text="❯" textFill="#FFFFFF">
-                                    <font><Font size="20.0"/></font>
+                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0" text="❯" textFill="#FFFFFF">
+                                    <font><Font size="20.0" /></font>
                                 </Label>
-                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0"
-                                        mnemonicParsing="false" onAction="#onListarClientes"
-                                        prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;"
-                                        text="Listar Clientes" textFill="#FFFFFF">
-                                    <font><Font size="19.0"/></font>
+                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onListarClientes" prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;" text="Listar Clientes" textFill="#FFFFFF">
+                                    <font><Font size="19.0" /></font>
                                 </Button>
-                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0"
-                                           pickOnBounds="true" preserveRatio="true"/>
-                            </children>
-                        </AnchorPane>
-
-                        <!-- Gestão de Clientes -->
-                        <AnchorPane prefHeight="75.0" prefWidth="316.0" style="-fx-border-color: #003366;">
-                            <children>
-                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0"
-                                       text="❯" textFill="#FFFFFF">
-                                    <font><Font size="20.0"/></font>
-                                </Label>
-                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0"
-                                        mnemonicParsing="false" onAction="#onGestaoClientes"
-                                        prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;"
-                                        text="Gestão de Clientes" textFill="#FFFFFF">
-                                    <font><Font size="19.0"/></font>
-                                </Button>
-                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0"
-                                           pickOnBounds="true" preserveRatio="true"/>
+                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </AnchorPane>
 
                         <!-- Validar Clientes -->
                         <AnchorPane prefHeight="75.0" prefWidth="316.0" style="-fx-border-color: #003366;">
                             <children>
-                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0"
-                                       text="❯" textFill="#FFFFFF">
-                                    <font><Font size="20.0"/></font>
+                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0" text="❯" textFill="#FFFFFF">
+                                    <font><Font size="20.0" /></font>
                                 </Label>
-                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0"
-                                        mnemonicParsing="false" onAction="#onValidarClientes"
-                                        prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;"
-                                        text="Validar Clientes" textFill="#FFFFFF">
-                                    <font><Font size="19.0"/></font>
+                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onValidarClientes" prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;" text="Validar Clientes" textFill="#FFFFFF">
+                                    <font><Font size="19.0" /></font>
                                 </Button>
-                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0"
-                                           pickOnBounds="true" preserveRatio="true"/>
+                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </AnchorPane>
 
                         <!-- Inserir Mapa -->
                         <AnchorPane prefHeight="75.0" prefWidth="316.0" style="-fx-border-color: #003366;">
                             <children>
-                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0"
-                                       text="❯" textFill="#FFFFFF">
-                                    <font><Font size="20.0"/></font>
+                                <Label layoutX="294.0" layoutY="21.0" prefHeight="30.0" prefWidth="16.0" text="❯" textFill="#FFFFFF">
+                                    <font><Font size="20.0" /></font>
                                 </Label>
-                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0"
-                                        mnemonicParsing="false" onAction="#onInserirMapa"
-                                        prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;"
-                                        text="Inserir Mapa" textFill="#FFFFFF">
-                                    <font><Font size="19.0"/></font>
+                                <Button alignment="CENTER" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onInserirMapa" prefHeight="76.0" prefWidth="313.0" style="-fx-background-color: transparent;" text="Inserir Mapa" textFill="#FFFFFF">
+                                    <font><Font size="19.0" /></font>
                                 </Button>
-                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0"
-                                           pickOnBounds="true" preserveRatio="true"/>
+                                <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="39.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </AnchorPane>
                     </children>
@@ -132,8 +89,6 @@
         </AnchorPane>
 
         <!-- CONTEÚDO CENTRAL (slot para Tools.carregarConteudo) -->
-        <AnchorPane fx:id="contentBox"
-                    layoutX="387.0" layoutY="148.0"
-                    prefHeight="430.0" prefWidth="820.0"/>
+        <AnchorPane fx:id="contentBox" layoutX="387.0" layoutY="148.0" prefHeight="430.0" prefWidth="820.0" />
     </children>
 </AnchorPane>

@@ -126,5 +126,32 @@ public class UtilizadorDAL {
         }
         return lista;
     }
+
+    /**
+     * Atualiza o estado de um utilizador na base de dados.
+     * <p>
+     * Altera o campo {@code estado} do utilizador com o ID fornecido,
+     * atribuindo-lhe o novo código de estado.
+     * </p>
+     *
+     * @param idUtilizador ID do utilizador a atualizar
+     * @param codigoEstado novo código de estado
+     * @return {@code true} se a atualização for bem-sucedida, {@code false} caso contrário
+     */
+    public boolean atualizarEstado(int idUtilizador, int codigoEstado) {
+        String sql = "UPDATE utilizador SET estado = ? WHERE id = ?";
+        try (Connection con = LigacaoSQL.getInstancia().getConexao();
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            stmt.setInt(1, codigoEstado);
+            stmt.setInt(2, idUtilizador);
+            return stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
 
