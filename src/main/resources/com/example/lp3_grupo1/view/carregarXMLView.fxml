@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.lp3_grupo1.Controller.backOfficeController"
+            style="-fx-background-color: #f0f2f5;">
+
+    <top>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="30" right="0" bottom="20" left="0"/>
+            </padding>
+            <Label text="CARREGAMENTO XML" textFill="#003366">
+                <font>
+                    <Font name="Eras Bold ITC" size="54"/>
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <AnchorPane>
+            <AnchorPane style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10,0,0,0);"
+                        AnchorPane.topAnchor="40" AnchorPane.bottomAnchor="40"
+                        AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="40">
+
+                <VBox spacing="30" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                      AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+                    <padding>
+                        <Insets top="30" right="30" bottom="30" left="30"/>
+                    </padding>
+
+                    <GridPane hgap="15" vgap="20">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="20" halignment="RIGHT"/>
+                            <ColumnConstraints percentWidth="60" hgrow="ALWAYS"/>
+                            <ColumnConstraints percentWidth="20" halignment="CENTER"/>
+                        </columnConstraints>
+
+                        <Label text="Ficheiro XML:" textFill="#003366" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="Eras Bold ITC" size="20"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="xmlPathField" promptText="Selecione o ficheiro XML"
+                                   editable="false" disable="true"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity">
+                            <font>
+                                <Font name="Eras Bold ITC" size="16"/>
+                            </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#onLoadXml" text="Carregar XML" textFill="#FFFFFF"
+                                style="-fx-background-color: #0074D9; -fx-background-radius: 8;"
+                                GridPane.columnIndex="2" GridPane.rowIndex="0" maxWidth="Infinity" prefHeight="40">
+                            <font>
+                                <Font name="Eras Bold ITC" size="16"/>
+                            </font>
+                        </Button>
+
+                        <Label text="Ficheiro XSD:" textFill="#003366" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Eras Bold ITC" size="20"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="xsdPathField" promptText="Selecione o ficheiro XSD"
+                                   editable="false" disable="true"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity">
+                            <font>
+                                <Font name="Eras Bold ITC" size="16"/>
+                            </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#onLoadXsd" text="Carregar XSD" textFill="#FFFFFF"
+                                style="-fx-background-color: #2ECC40; -fx-background-radius: 8;"
+                                GridPane.columnIndex="2" GridPane.rowIndex="1" maxWidth="Infinity" prefHeight="40">
+                            <font>
+                                <Font name="Eras Bold ITC" size="16"/>
+                            </font>
+                        </Button>
+
+                        <Button fx:id="validateButton" mnemonicParsing="false" onAction="#onValidate"
+                                text="Validar XML com XSD" textFill="#FFFFFF" disable="true"
+                                style="-fx-background-color: #FF4136; -fx-background-radius: 10; -fx-font-weight: bold;"
+                                GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="1"
+                                maxWidth="Infinity" prefHeight="50"/>
+                    </GridPane>
+                </VBox>
+            </AnchorPane>
+        </AnchorPane>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="10" right="0" bottom="20" left="0"/>
+            </padding>
+            <Label fx:id="statusLabel" textFill="gray" wrapText="true"
+                   style="-fx-font-family: 'Eras Bold ITC'; -fx-font-size: 16;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
