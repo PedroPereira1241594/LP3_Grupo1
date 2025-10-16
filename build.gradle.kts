@@ -27,15 +27,18 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule.set("com.example.lp3_grupo1")
-    mainClass.set("com.example.lp3_grupo1.HelloApplication")
+    mainClass.set("com.example.lp3_grupo1.Main")
 }
 
 javafx {
-    version = "17.0.6"
+    version = "21"
     modules = listOf("javafx.controls", "javafx.fxml", "javafx.web", "javafx.swing", "javafx.media")
 }
 
 dependencies {
+    // Driver JDBC para SQL Server
+    implementation("com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11")
+    
     implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
         exclude(group = "org.openjfx")
@@ -50,7 +53,6 @@ dependencies {
     }
     implementation("com.github.almasb:fxgl:17.3") {
         exclude(group = "org.openjfx")
-        exclude(group = "org.jetbrains.kotlin")
     }
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
@@ -58,6 +60,11 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+// 🔹 Adicionado: Forçar software rendering para JavaFX
+tasks.named<JavaExec>("run") {
+    jvmArgs = listOf("-Dprism.order=sw")
 }
 
 jlink {
