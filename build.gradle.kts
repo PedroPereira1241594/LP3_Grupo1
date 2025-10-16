@@ -32,13 +32,20 @@ application {
 
 javafx {
     version = "21"
-    modules = listOf("javafx.controls", "javafx.fxml", "javafx.web", "javafx.swing", "javafx.media")
+    modules = listOf(
+        "javafx.controls",
+        "javafx.fxml",
+        "javafx.web",
+        "javafx.swing",
+        "javafx.media"
+    )
 }
 
 dependencies {
-    // Driver JDBC para SQL Server
+    // 🔹 JDBC driver para SQL Server
     implementation("com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11")
-    
+
+    // 🔹 Dependências JavaFX
     implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
         exclude(group = "org.openjfx")
@@ -54,15 +61,23 @@ dependencies {
     implementation("com.github.almasb:fxgl:17.3") {
         exclude(group = "org.openjfx")
     }
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    // ✅ JUnit 5 (Jupiter) — configuração moderna e recomendada
+    testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<Test> {
+    // ✅ Garante que os testes usam o JUnit 5 (Jupiter)
     useJUnitPlatform()
+
+    // (opcional) Mostra resultados detalhados no terminal
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
 }
 
-// 🔹 Adicionado: Forçar software rendering para JavaFX
+// 🔹 Forçar rendering por software no JavaFX (mantido)
 tasks.named<JavaExec>("run") {
     jvmArgs = listOf("-Dprism.order=sw")
 }
