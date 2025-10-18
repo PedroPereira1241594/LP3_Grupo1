@@ -3,6 +3,7 @@ package com.example.lp3_grupo1.Controller;
 import java.util.List;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -24,6 +25,16 @@ import com.example.Utils.Tools;
  * e disponibilizar ações de aprovação individual e em lote.
  */
 public class ValidacaoClientesController {
+    @FXML
+    private void closeApplicationButtonOnAction(ActionEvent event) {
+        // ação do botão Home
+    }
+
+    @FXML
+    private void loginButtonOnAction(ActionEvent event){
+        //ação do botão Home
+    }
+
     @FXML
     private TableView<Utilizador> tabelaPessoas;
 

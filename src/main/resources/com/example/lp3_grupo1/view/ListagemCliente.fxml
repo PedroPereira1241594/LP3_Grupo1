@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.lp3_grupo1.Controller.ListagemClienteController"
+      spacing="12.0" prefWidth="820.0" prefHeight="500.0">
+    <children>
+
+        <Label text="Listagem de Clientes">
+            <font><Font size="28.0"/></font>
+        </Label>
+
+        <!-- Torna a tabela editável -->
+        <TableView fx:id="tabelaPessoas" editable="true" prefHeight="420.0">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80.0"/>
+                <TableColumn fx:id="colNome" text="Nome" prefWidth="180.0"/>
+                <TableColumn fx:id="colPassword" text="Password" prefWidth="160.0"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="220.0"/>
+                <TableColumn fx:id="colDataNascimento" text="Data Nascimento" prefWidth="200.0"/>
+                <!-- Nota: a cellFactory da coluna Estado é definida no controller -->
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="140.0"/>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="120.0"/>
+            </columns>
+        </TableView>
+
+        <HBox alignment="CENTER_RIGHT" spacing="8.0">
+            <children>
+                <Button fx:id="btnGuardarAlteracoes"
+                        text="Guardar alterações"
+                        onAction="#onGuardarAlteracoes"
+                        disable="true"
+                        prefWidth="200.0" />
+            </children>
+            <padding>
+                <Insets top="4.0" right="0.0" bottom="0.0" left="0.0"/>
+            </padding>
+        </HBox>
+    </children>
+    <padding><Insets top="8.0" left="8.0" right="8.0" bottom="8.0"/></padding>
+</VBox>
